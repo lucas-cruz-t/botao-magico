@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia dos Namorados</title>
+
+    <style>
+        body {
+            background-color: red;
+        }
+
+        .painel {
+            padding-bottom: 8px;
+            margin: auto;
+            background-color: pink;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #sim {
+            height: 45px;
+            width: 60px;
+            background-color: red;
+            border: 3px solid black;
+            border-radius: 10px;
+            color: white;
+            margin-left: -70px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        #nao {
+            position: absolute;
+            height: 45px;
+            width: 60px;
+            background-color: red;
+            border: 3px solid black;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .painel img {
+            height: 300px;
+        }
+
+        .background img {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <img src="./valen.jpg" alt="">
+    </div>
+
+    <main>
+    <div class="painel">
+        <h1>Feliz Dia dos Namorados</h1>
+
+        <img src="./ursinho-unscreen.gif" alt="Ursinho com um coração">
+
+
+        <h2>Aceita namorar comigo?</h2>
+
+        <a href="https://www.youtube.com/watch?v=b0Ya9dPu1mo"><button id="sim"> Sim! </button></a>
+        <button onmouseover="fuja()" id="nao"> Não! </button>
+    </div>
+    </main>
+    
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+        }
+
+    </script>
+</body>
+</html>
